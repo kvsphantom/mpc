@@ -34,3 +34,34 @@ function getSliderValue(){
 	var slider = this.document.getElementById("slider");
 	return slider.value;
 }
+
+function onSubmit(){
+	
+	var data= 	{'ff':12012412420, 'vf':111124124124120, 'slider_position':13324134124,'date':'Tuesday', 'loudness':45};
+	//var xhr = new XMLHttpRequest();
+	//xhr.open('POST', 'http://192.168.1.55:3000/value/', true);
+	//xhr.onload = function () {
+		// do something to response
+		//console.log(this.responseText);
+	//};
+	//xhr.send(datamap);
+	/*window.ajax({
+		type: "POST",
+		url: "http://192.168.1.55:3000/value/",
+		data: 	{'ff':600, 'vf':610, 'slider_position':1,'date':'Tuesday', 'loudness':45},
+		success: function(result) {
+			alert('ok');
+		},
+		error: function(result) {
+			alert('error');
+		}
+	});*/
+	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+	xmlhttp.open("POST", "http://192.168.1.55:3000/value/", true);
+	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	xmlhttp.send(JSON.stringify(data));
+	xmlhttp.onload = function () {
+		console.log(this.responseText);
+	};
+}
+	
