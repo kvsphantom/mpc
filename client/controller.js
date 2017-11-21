@@ -1,6 +1,9 @@
 var context = new (window.AudioContext || window.webkitAudioContext)();
 var vol = this.context.createGain();
-		
+var user;
+var emailId;
+var zeroDb;
+
 function playfixedfreq(f){
 	var osc = this.context.createOscillator(); // instantiate an oscillator
 	osc.type = 'sine'; // this is the default - also square, sawtooth, triangle
@@ -10,6 +13,16 @@ function playfixedfreq(f){
 	this.vol.connect(this.context.destination); // connect vol to context destination
 	osc.start(); // start the oscillator
 	osc.stop(this.context.currentTime + 0.5); // stop 2 seconds after the current time
+}
+
+function playfixedfreqLoop(f,volume){
+	var osc = this.context.createOscillator(); // instantiate an oscillator
+	osc.type = 'sine'; // this is the default - also square, sawtooth, triangle
+	osc.frequency.value = f; // Hz
+	this.vol.gain.value = volume/10; // from 0 to 1, 1 full volume, 0 is muted
+	osc.connect(this.vol); // connect osc to vol
+	this.vol.connect(this.context.destination); // connect vol to context destination
+	osc.start(); // start the oscillator
 }
 
 function playvarfreq(f){
@@ -35,27 +48,21 @@ function getSliderValue(){
 	return slider.value;
 }
 
+function getVolumeSliderValue(){
+	var volume_slider = this.document.getElementById("volume_slider");
+	return volume_slider.value;
+}
+
+function setUserData(){
+	this.user = this.document.getElementById("name").value;
+	this.emailId = this.document.getElementById("email").value;
+	this.zeroDb = this.document.getElementById("volume_slider").value;
+	this.window.location = 'index.html';
+}
+
 function onSubmit(){
 	
 	var data= 	{'ff':12012412420, 'vf':111124124124120, 'slider_position':13324134124,'date':'Tuesday', 'loudness':45};
-	//var xhr = new XMLHttpRequest();
-	//xhr.open('POST', 'http://192.168.1.55:3000/value/', true);
-	//xhr.onload = function () {
-		// do something to response
-		//console.log(this.responseText);
-	//};
-	//xhr.send(datamap);
-	/*window.ajax({
-		type: "POST",
-		url: "http://192.168.1.55:3000/value/",
-		data: 	{'ff':600, 'vf':610, 'slider_position':1,'date':'Tuesday', 'loudness':45},
-		success: function(result) {
-			alert('ok');
-		},
-		error: function(result) {
-			alert('error');
-		}
-	});*/
 	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
 	xmlhttp.open("POST", "http://192.168.1.55:3000/value/", true);
 	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
