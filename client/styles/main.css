@@ -1,0 +1,36 @@
+body {
+	background-color: #999;
+}
+
+.labels{
+	display: flex;
+}
+
+.gap {
+	padding-right: 215px;
+	padding-bottom: 10px;
+	display: flex;
+}
+
+button{
+	width: 300%;
+	height: 150%;
+}
+.sp {
+	margin-left: 326px;
+}
+
+.stepsizegap {
+	margin-left: 340px;
+}
+
+.slidergap {
+	margin-left: 200px;
+}
+
+.width100{
+	width: 23%;
+    height: 60px;
+    margin-top: 100px;
+    margin-left: 31%;
+}
