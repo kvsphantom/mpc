@@ -6,41 +6,150 @@
 	<script language="javascript"></script>
 </head>
 <body>
-    <h1>Loundness Level L1</h1>
-	<div class="row labels">
-		<div class="gap"> <h3>Fixed Frequency</h3> </div>
-		<div class="gap"> <h3>Variable Frequency </h3></div>
-		<div class="gap"> <h3>Step Size</h3> </div>
-		<div class="gap"> <h3>Sliders </h3></div>
-	</div>
-	<form>
-		<div class="row labels">
-			<div class="gap"> 
-				<button type="button" onclick="playfixedfreq(400)">400</button> 
-				<button type="button" onclick="playvarfreq(400)" class="sp">VF</button>
-				<select id="stepsize" class="stepsizegap">
-				  <option value="50">25</option>
-				  <option value="25">10</option>
-				  <option value="10">5</option>
-				  <option value="5">1</option>
-				  <option value="1">0.5</option>
-				  <option value="1">0.1</option>
-				  <option value="1">0.05</option>
-				</select>
-				<input id="slider" 
-					class="slidergap" type="range"
-					list="tickmarks" value="10"
-					min="0" max="10"		
-					step="1"
-					name="range">		
-			</div>
+	<div style="float: left;">
+		<h1>Loundness Level L1</h1>
+		<div class="row flex">
+			<div class="gap"> <h3>Fixed Frequency</h3> </div>
+			<div class="gap"> <h3>Variable Frequency Sliders </h3></div>
 		</div>
-	</form>
+		<form>
+			<div class="row labels">
+				<div class="gap"> 
+					<button type="button" onclick="playfixedfreq(80,0.1)">L1.FF1</button> 
+					<input id="slider" 
+						class="slidergap" type="range"
+						list="tickmarks" value="10"
+						min="0" max="10"		
+						step="0.1"
+						name="range"
+						onchange="playvarfreq(80,0.1,this.value)">
+				</div>
+			</div>
+			<div class="row labels">
+				<div class="gap"> 
+					<button type="button" onclick="playfixedfreq(80,0.1)">L1.FF2</button> 
+					<input id="slider" 
+						class="slidergap" type="range"
+						list="tickmarks" value="10"
+						min="0" max="10"		
+						step="0.1"
+						name="range"
+						onchange="playvarfreq(80,0.1,this.value)">
+				</div>
+			</div>
+			<div class="row labels">
+				<div class="gap"> 
+					<button type="button" onclick="playfixedfreq(80,0.1)">L1.FF3</button> 
+					<input id="slider" 
+						class="slidergap" type="range"
+						list="tickmarks" value="10"
+						min="0" max="10"		
+						step="0.1"
+						name="range"
+						onchange="playvarfreq(80,0.1,this.value)">
+				</div>
+			</div>
+			<div class="row labels">
+				<div class="gap"> 
+					<button type="button" onclick="playfixedfreq(80,0.1)">L1.FF4</button> 
+					<input id="slider" 
+						class="slidergap" type="range"
+						list="tickmarks" value="10"
+						min="0" max="10"		
+						step="0.1"
+						name="range"
+						onchange="playvarfreq(80,0.1,this.value)">
+				</div>
+			</div>
+			<div class="row labels">
+				<div class="gap"> 
+					<button type="button" onclick="playfixedfreq(80,0.1)">L1.FF5</button> 
+					<input id="slider" 
+						class="slidergap" type="range"
+						list="tickmarks" value="10"
+						min="0" max="10"		
+						step="0.1"
+						name="range"
+						onchange="playvarfreq(80,0.1,this.value)">
+				</div>
+			</div>
+		</form>
+	</div>    
+	<div style="float: right;">
+		<h1>Loundness Level L2</h1>
+		<div class="row flex">
+			<div class="gap"> <h3>Fixed Frequency</h3> </div>
+			<div class="gap"> <h3>Variable Frequency Sliders </h3></div>
+		</div>
+		<form>
+			<div class="row labels">
+				<div class="gap"> 
+					<button type="button" onclick="playfixedfreq(80,0.1)">L2.FF1</button> 
+					<input id="slider" 
+						class="slidergap" type="range"
+						list="tickmarks" value="10"
+						min="0" max="10"		
+						step="0.1"
+						name="range"
+						onchange="playvarfreq(80,0.1,this.value)">
+				</div>
+			</div>
+			<div class="row labels">
+				<div class="gap"> 
+					<button type="button" onclick="playfixedfreq(80,0.1)">L2.FF2</button> 
+					<input id="slider" 
+						class="slidergap" type="range"
+						list="tickmarks" value="10"
+						min="0" max="10"		
+						step="0.1"
+						name="range"
+						onchange="playvarfreq(80,0.1,this.value)">
+				</div>
+			</div>
+			<div class="row labels">
+				<div class="gap"> 
+					<button type="button" onclick="playfixedfreq(80,0.1)">L2.FF3</button> 
+					<input id="slider" 
+						class="slidergap" type="range"
+						list="tickmarks" value="10"
+						min="0" max="10"		
+						step="0.1"
+						name="range"
+						onchange="playvarfreq(80,0.1,this.value)">
+				</div>
+			</div>
+			<div class="row labels">
+				<div class="gap"> 
+					<button type="button" onclick="playfixedfreq(80,0.1)">L2.FF4</button> 
+					<input id="slider" 
+						class="slidergap" type="range"
+						list="tickmarks" value="10"
+						min="0" max="10"		
+						step="0.1"
+						name="range"
+						onchange="playvarfreq(80,0.1,this.value)">
+				</div>
+			</div>
+			<div class="row labels">
+				<div class="gap"> 
+					<button type="button" onclick="playfixedfreq(80,0.1)">L2.FF5</button> 
+					<input id="slider" 
+						class="slidergap" type="range"
+						list="tickmarks" value="10"
+						min="0" max="10"		
+						step="0.1"
+						name="range"
+						onchange="playvarfreq(80,0.1,this.value)">
+				</div>
+			</div>
+		</form>
+	</div>
 	<button type="submit" class="width100" onclick="onSubmit()">Submit</button> 
     <script src="controller.js"></script>
 </body>
 </html>
 
+<!--
 <datalist id="tickmarks">
   <option value="0" label="0%">
   <option value="1">
@@ -54,3 +163,4 @@
   <option value="9">
   <option value="10" label="100%">
 </datalist>
+-->

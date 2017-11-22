@@ -4,10 +4,15 @@ body {
 
 .labels{
 	display: flex;
+	padding-bottom: 20px;	
+}
+
+.flex{
+	display: flex;	
 }
 
 .gap {
-	padding-right: 215px;
+	padding-right: 135px;
 	padding-bottom: 10px;
 	display: flex;
 }
@@ -25,7 +30,7 @@ button{
 }
 
 .slidergap {
-	margin-left: 200px;
+	margin-left: 300px;
 }
 
 .width100{
