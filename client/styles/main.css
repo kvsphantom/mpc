@@ -29,9 +29,13 @@ button{
 	margin-left: 340px;
 }
 
-.slidergap {
+.slidergap_spl {
 	margin-left: 300px;
 	width: 23%;
+}
+
+.slidergap {
+	margin-left: 300px;
 }
 
 .width100{
