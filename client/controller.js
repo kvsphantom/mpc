@@ -67,11 +67,17 @@ function setUserData(){
 }
 
 function setVolumeAtL1(ref_vol){
-	return ref_vol*Math.power(10,(45/20));
+	var l1=ref_vol*Math.pow(10,(25/20));
+	return l1;
 }
 
 function setVolumeAtL2(ref_vol){
-	return ref_vol*Math.power(10,(75/20));
+	var l2=ref_vol*Math.pow(10,(45/20));
+	return l2;
+}
+
+function getZeroDb(){
+	return sessionStorage.getItem("zeroDb");
 }
 
 function onSubmit(){
