@@ -72,8 +72,13 @@ function setVolumeAtL1(ref_vol){
 }
 
 function setVolumeAtL2(ref_vol){
-	var l2=ref_vol*Math.pow(10,(45/20));
+	var l2=ref_vol*Math.pow(10,(35/20));
 	return l2;
+}
+
+function setVolumeAtL3(ref_vol){
+	var l3=ref_vol*Math.pow(10,(45/20));
+	return l3;
 }
 
 function getZeroDb(){
