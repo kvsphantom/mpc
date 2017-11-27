@@ -3,6 +3,9 @@ var vol = this.context.createGain();
 var user;
 var emailId;
 var zeroDb;
+var age;
+var gender;
+var experience;
 
 function playfixedfreq(f,volume){
 	var osc = this.context.createOscillator(); // instantiate an oscillator
@@ -59,10 +62,17 @@ function setUserData(){
 	this.user = this.document.getElementById("name").value;
 	this.emailId = this.document.getElementById("email").value;
 	this.zeroDb = this.document.getElementById("volume_slider").value;
+	this.age = this.document.getElementById("age").value;
+	var genderSelect = document.getElementById("gender");
+	this.gender = genderSelect.options[genderSelect.selectedIndex].text;
+	var expSelect = document.getElementById("experience");
+	this.experience = expSelect.options[expSelect.selectedIndex].text;
 	sessionStorage.setItem("user",this.user);
 	sessionStorage.setItem("emailId",this.emailId);
 	sessionStorage.setItem("zeroDb",this.zeroDb);
-	
+	sessionStorage.setItem("age",this.age);
+	sessionStorage.setItem("gender",this.gender);
+	sessionStorage.setItem("experience",this.experience);
 	this.window.location = 'index.html';
 }
 
@@ -86,12 +96,21 @@ function getZeroDb(){
 }
 
 function onSubmit(){
-	console.log('USER: '+ sessionStorage.getItem("user"));
-	console.log('calib: '+ sessionStorage.getItem("zeroDb"));
-	var data= 	{'ff':12012412420, 'vf':111124124124120, 'slider_position':13324134124,'date':'Tuesday', 'loudness':45};
+	//console.log('USER: '+ sessionStorage.getItem("user"));
+	//console.log('calib: '+ sessionStorage.getItem("zeroDb"));
+	
+	this.user = sessionStorage.getItem("user");
+	this.emailId = sessionStorage.getItem("emailId");
+	this.zeroDb = sessionStorage.getItem("zeroDb");
+	this.age = sessionStorage.getItem("age");
+	this.gender = sessionStorage.getItem("gender");
+	this.experience = sessionStorage.getItem("experience");
+		
+	var data= 	{'ff':12012412420, 'vf':111124124124120, 'slider_position':this.zeroDb,'date':'Tuesday', 'loudness':45, };
 	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-	xmlhttp.open("POST", "http://192.168.1.55:3000/value/", true);
-	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	debugger;
+	//xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	xmlhttp.open("POST", "http://35.185.52.114:3000/value/", true);
 	xmlhttp.send(JSON.stringify(data));
 	xmlhttp.onload = function () {
 		console.log(this.responseText);
