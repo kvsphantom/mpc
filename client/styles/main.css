@@ -46,6 +46,18 @@ button{
     margin-left: 31%;
 }
 
+.cents{
+	width: 30px;
+    margin-top: -2px;
+    margin-bottom: 7px;
+	text-align: center;
+}
+
+.labelcents{
+	margin-top: 3px;
+    margin-left: 3px;	
+}
+
 .clickMe {
     -moz-appearance: button;
     -ms-appearance: button;
