@@ -106,7 +106,6 @@ function setCentsDisplay(id,value){
 	this.document.getElementById(identifier).value = value;
 }
 
-
 function onSubmit(){
 	//console.log('USER: '+ sessionStorage.getItem("user"));
 	//console.log('calib: '+ sessionStorage.getItem("zeroDb"));
@@ -225,5 +224,7 @@ function onSubmit(){
 	xmlhttp.onload = function () {
 		console.log(this.responseText);
 	};
+	this.window.location = 'thanks.html';
+
 }
 	
