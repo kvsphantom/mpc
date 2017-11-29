@@ -78,7 +78,7 @@ function setUserData(){
 	sessionStorage.setItem("age",this.age);
 	sessionStorage.setItem("gender",this.gender);
 	sessionStorage.setItem("experience",this.experience);
-	this.window.location = 'index.html';
+	this.window.location = 'survey.html';
 }
 
 function setVolumeAtL1(ref_vol){
