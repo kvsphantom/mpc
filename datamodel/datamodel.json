@@ -66,4 +66,3 @@
 	'L3VF8': 7902.16 + map['7902.16'] * this.L3VF8,
 	'DIFF_L3F8': this.L3VF8
 };
-}

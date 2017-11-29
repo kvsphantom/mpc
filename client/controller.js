@@ -216,15 +216,53 @@ function onSubmit(){
 				'L3VF8':parseFloat(7902.16+map['7902.16']*this.L3VF8),
 				'DIFF_L3F8':parseFloat(this.L3VF8)
 				};
+	/*var data= 	{'name':String(this.user),
+				'emailId':String(this.emailId),
+				'age':parseFloat(this.age),
+				'gender':String(this.gender),
+				'experience':String(this.experience),
+				'zeroDb':parseFloat(this.zeroDb)};			
+	*/
+
+	/*
 	debugger;
 	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-	xmlhttp.open("POST", "http://35.185.52.114:3000/value/", true);
+	//xmlhttp.open("POST", "http://35.185.52.114:3000/value/", true);
+	xmlhttp.open("POST", "https://script.google.com/macros/s/AKfycbxLAUz82F38vMmhBCUdJb4uf9LpxO-cdbRwhpTNpsvb9taGVjeK/exec", true);	
 	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	xmlhttp.send(JSON.stringify(data));
 	xmlhttp.onload = function () {
 		console.log(this.responseText);
 	};
-	this.window.location = 'thanks.html';
+	//this.window.location = 'thanks.html';
+	*/
 
+	debugger;
+	var xhr = new XMLHttpRequest();
+    xhr.open('POST', "https://script.google.com/macros/s/AKfycbxLAUz82F38vMmhBCUdJb4uf9LpxO-cdbRwhpTNpsvb9taGVjeK/exec?callback=?",true);
+    // xhr.withCredentials = true;
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+	xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+	xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.onreadystatechange = function() {
+        console.log( xhr.status, xhr.statusText )
+        console.log(xhr.responseText);
+        //document.getElementById('gform').style.display = 'none'; // hide form
+        //document.getElementById('thankyou_message').style.display = 'block';
+        return;
+    };
+	
+	xhr.send(JSON.stringify(data));
+    xhr.onload = function () {
+		console.log(this.responseText);
+	};
+	/*
+	// url encode form data for sending as post data
+    var encoded = Object.keys(data).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    }).join('&')
+    xhr.send(encoded);
+	*/
 }
 	
