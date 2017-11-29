@@ -10,7 +10,6 @@ var L1VF1,L1VF2,L1VF3,L1VF4,L1VF5,L1VF6,L1VF7,L1VF8;
 var L2VF1,L2VF2,L2VF3,L2VF4,L2VF5,L2VF6,L2VF7,L2VF8;
 var L3VF1,L3VF2,L3VF3,L3VF4,L3VF5,L3VF6,L3VF7,L3VF8; 
 var map = {'65.41':0.0389, '311.13':0.185, '698.46':0.4153, '1046.5':0.6222, '2489.04':1.48,'3951.08':2.3492,'6644.88':3.9512,'7902.16':4.6984};
-//map['mykey1']
 
 function playfixedfreq(f,volume){
 	var osc = this.context.createOscillator(); // instantiate an oscillator
@@ -237,32 +236,13 @@ function onSubmit(){
 	//this.window.location = 'thanks.html';
 	*/
 
-	debugger;
 	var xhr = new XMLHttpRequest();
-    xhr.open('POST', "https://script.google.com/macros/s/AKfycbxLAUz82F38vMmhBCUdJb4uf9LpxO-cdbRwhpTNpsvb9taGVjeK/exec?callback=?",true);
-    // xhr.withCredentials = true;
-    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-	xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
-	xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
-	xhr.setRequestHeader('Content-Type', 'application/json');
-	xhr.onreadystatechange = function() {
-        console.log( xhr.status, xhr.statusText )
-        console.log(xhr.responseText);
-        //document.getElementById('gform').style.display = 'none'; // hide form
-        //document.getElementById('thankyou_message').style.display = 'block';
-        return;
-    };
-	
+    xhr.open('POST', "https://script.google.com/macros/s/AKfycbxLAUz82F38vMmhBCUdJb4uf9LpxO-cdbRwhpTNpsvb9taGVjeK/exec",true);
 	xhr.send(JSON.stringify(data));
-    xhr.onload = function () {
+	xhr.onload = function () {
 		console.log(this.responseText);
 	};
-	/*
-	// url encode form data for sending as post data
-    var encoded = Object.keys(data).map(function(k) {
-        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-    }).join('&')
-    xhr.send(encoded);
-	*/
+	this.window.location = 'thanks.html';
+	
 }
 	
