@@ -241,8 +241,11 @@ function onSubmit(){
 	xhr.send(JSON.stringify(data));
 	xhr.onload = function () {
 		console.log(this.responseText);
+		navigate();
 	};
-	this.window.location = 'thanks.html';
-	
 }
 	
+function navigate(){
+		this.window.location = 'thanks.html';
+
+}	
